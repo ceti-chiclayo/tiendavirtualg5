@@ -1,0 +1,38 @@
+{
+  "name": "ceti/tiendavirtual",
+  "description": "Proyecto de tienda virtual",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ruben Chaname",
+      "email": "rdchaname@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "./app",
+      "Core\\": "./core"
+    },
+    "files": [
+      "core/helpers.php"
+    ]
+  },
+  "require": {
+    "php": "^7.4",
+    "swiftmailer/swiftmailer": "^6.2",
+    "illuminate/database": "^8.40",
+    "ext-pdo": "*",
+    "vlucas/phpdotenv": "^5.3",
+    "tecnickcom/tcpdf": "^6.4",
+    "phpoffice/phpspreadsheet": "^1.17",
+    "vlucas/valitron": "^1.4",
+    "illuminate/events": "^8.49",
+    "spatie/laravel-sluggable": "^2.6",
+    "symfony/http-foundation": "^5.3",
+    "ramsey/uuid": "^4.1",
+    "gumlet/php-image-resize": "^2.0",
+    "culqi/culqi-php": "^1.5",
+    "ext-json": "*"
+  }
+}
