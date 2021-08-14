@@ -16,7 +16,7 @@ class Application
     public Controller $controller;
     public static string $ROOT_DIR;
     public static Application $contenedor;
-    public Mail $mail;
+    public Mailer $mailer;
     public Authentication $auth;
 
     public function __construct(string $root_dir, array $config = [])
@@ -24,7 +24,7 @@ class Application
         self::$ROOT_DIR = $root_dir;
         self::$contenedor = $this;
         $this->auth = new Authentication();
-        $this->mail = new Mail();
+        $this->mailer = new Mailer();
         $this->request = Request::createFromGlobals();
         $this->response = new Response();
         $this->router = new Router($this->request);

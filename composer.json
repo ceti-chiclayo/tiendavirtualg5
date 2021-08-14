@@ -33,6 +33,7 @@
     "ramsey/uuid": "^4.1",
     "gumlet/php-image-resize": "^2.0",
     "culqi/culqi-php": "^1.5",
-    "ext-json": "*"
+    "ext-json": "*",
+    "nesbot/carbon": "^2.51"
   }
 }

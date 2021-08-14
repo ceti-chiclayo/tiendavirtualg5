@@ -153,3 +153,9 @@ $app->router->post('/cupones/destroy/{cupon_id}', [\App\Controllers\CuponControl
 # Perfil
 $app->router->get('/perfil', [\App\Controllers\PerfilController::class, 'index']);
 $app->router->post('/perfil/actualizar', [\App\Controllers\PerfilController::class, 'update']);
+
+# Recuperar contraseña
+$app->router->get('/solicitar-cambio-password', [\App\Controllers\RecuperarPasswordController::class, 'formularioRecuperar']);
+$app->router->post('/solicitar-cambio-password', [\App\Controllers\RecuperarPasswordController::class, 'solicitarRecuperar']);
+$app->router->get('/cambiar-password/{token}', [\App\Controllers\RecuperarPasswordController::class, 'formularioCambiar']);
+$app->router->post('/cambiar-password', [\App\Controllers\RecuperarPasswordController::class, 'cambiarPassword']);

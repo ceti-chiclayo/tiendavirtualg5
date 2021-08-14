@@ -36,28 +36,17 @@ class Request extends SymfonyRequest
     public function getBody(): array
     {
         $body = [];
-        if ($this->isGet()) {
-            foreach ($_GET as $key => $value) {
-                $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
-            }
+        foreach ($_GET as $key => $value) {
+            $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
         }
-        if ($this->isPost()) {
-            foreach ($_POST as $key => $value) {
-                $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
-            }
+        foreach ($_POST as $key => $value) {
+            $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
         }
         return $body;
     }
 
-    /**
-     * Buscar la existencia de un parametros
-     *
-     * @param [type] $key
-     * @param [type] $default
-     * @return void
-     */
-    public function get($key, $default = null)
+    public function getUrlPeticion()
     {
-        return $this->getBody()[$key] ?? $default;
+        return $_SERVER['HTTP_REFERER'] ?? '/';
     }
 }
