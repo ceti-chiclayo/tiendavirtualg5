@@ -61,6 +61,9 @@ $this->endSection('titulo_pagina')
                 <p class="mb-0">
                     <a href="/login-registro" class="text-center">Registrarme como cliente</a>
                 </p>
+                <p class="mb-0">
+                    <a href="/solicitar-cambio-password" class="text-center">¿Olvidaste tu contraseña?</a>
+                </p>
             </div>
         </div>
     </div>
@@ -69,9 +72,6 @@ $this->startSection('javascript-extra')
 ?>
     <script>
         $('#formulario-login').validate({
-            // submitHandler: function(form) {
-            //     alert('Todo validado');
-            // },
             rules: {
                 email: {
                     required: true,
@@ -79,7 +79,6 @@ $this->startSection('javascript-extra')
                 },
                 password: {
                     required: true,
-                    minlength: 8
                 }
             },
             messages: {},

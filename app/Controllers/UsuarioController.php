@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Middlewares\AuthMiddleware;
+use App\Middlewares\VerificarAdminMiddleware;
 use App\Models\Usuario;
 use Core\Controller;
 use Core\Request;
@@ -13,6 +14,7 @@ class UsuarioController extends Controller
     public function __construct()
     {
         $this->registerMiddleware(new AuthMiddleware());
+        $this->registerMiddleware(new VerificarAdminMiddleware());
     }
 
     public function index(): string

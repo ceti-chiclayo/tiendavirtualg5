@@ -73,3 +73,10 @@ if (!function_exists('auth')) {
     }
 }
 
+if (!function_exists('mailer')) {
+    function mailer(): \Core\Mailer
+    {
+        return \Core\Application::$contenedor->mailer;
+    }
+}
+
